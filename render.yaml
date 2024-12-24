@@ -2,4 +2,4 @@ build:
   services:
     - type: web
       env:
-        BUILD_PACK_APT_INCLUDE: "libssl-dev libopus-dev libvpx-dev pkg-config"
+        BUILD_PACK_APT_INCLUDE: "libssl-dev libopus-dev libvpx-dev pkg-config build-essential gcc g++ make"

@@ -41,7 +41,7 @@ def checkUser(msg):
             if(data["meetingID"] == user.meetingID):
                 existing = True
     if (existing):
-        send('userExists', broadcast=False)
+        send('userExists', broadcast=True)
     else:
         send('userOK', broadcast=False)
 

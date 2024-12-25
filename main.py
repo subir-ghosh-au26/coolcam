@@ -43,7 +43,7 @@ def checkUser(msg):
     if (existing):
         send('userExists', broadcast=True)
     else:
-        send('userOK', broadcast=False)
+        send('userOK', broadcast=True)
 
 
 @socketio.on('userDisconnected')
@@ -58,7 +58,7 @@ def onDisconnect(msg):
         i = i + 1
     users.pop(posArray)
     print("user "+ data["username"]+ " from meeting "+data["meetingID"]+ " disconnected")
-    emit('userDisconnected',msg, broadcast=True)
+    emit('userDisconnected',msg, broadcast=False)
     
 @socketio.on('message')
 def handleMessage(msg):

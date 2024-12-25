@@ -1,5 +1,7 @@
-build:
-  services:
-    - type: web
-      env:
-        BUILD_PACK_APT_INCLUDE: "libssl-dev libopus-dev libvpx-dev pkg-config build-essential gcc g++ make python3-dev"
+services:
+  - type: web
+    name: my-django-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn myproject.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
